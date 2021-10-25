@@ -1,0 +1,38 @@
+<div class="container margin-home">
+  <div class="form-group rcorner">
+    <h5>Insertar Log: </h5>
+    <div>
+      <form>
+        <div class="form-group">
+          <label>Nuevo Log: </label>
+          <input type="text" class="form-control" placeholder="Ingrese el nuevo log" [(ngModel)]="stringInsert"
+                 [ngModelOptions]="{standalone: true}">
+          <p></p>
+          <button type="submit" class="btn btn-outline-dark" (click)="addLog();" [disabled]="!canShowSave()">Guardar
+          </button>
+        </div>
+      </form>
+
+      <h5>Listar últimos Logs: </h5>
+
+      <div class="table-responsive">
+        <table class="rowhighlight table thead-light center">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Fecha</th>
+          </tr>
+          </thead>
+          <tbody *ngFor="let log of logs;  let i = index">
+          <tr>
+            <th scope="row">{{i + 1}}</th>
+            <td>{{log.log}}</td>
+            <td>{{log.createdAt}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

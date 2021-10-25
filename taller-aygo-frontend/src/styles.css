@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+.center {
+  text-align: center;
+}
+.rcorner {
+  border-radius: 25px;
+  border: 2px solid #FE642D;
+  padding: 20px;
+}

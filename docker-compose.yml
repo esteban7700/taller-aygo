@@ -1,0 +1,56 @@
+version: '2'
+
+services:
+  balancer:
+    image: jhordy7700/taller-aygo-balancer-ms
+    container_name: balancer
+    environment:
+      - LOG_HOSTS=http://web1:6000,http://web2:6000,http://web3:6000
+    ports:
+      - 7077:5000
+  web3:
+    image: jhordy7700/taller-aygo-ms
+    container_name: web3
+    environment:
+      - MONGODB_USERNAME=aygo
+      - MONGODB_PASSWORD=secret
+      - MONGODB_HOST=db
+      - MONGODB_PORT=27017
+      - MONGODB_DB=test
+    ports:
+      - 8089:6000
+  web2:
+    image: jhordy7700/taller-aygo-ms
+    container_name: web2
+    environment:
+      - MONGODB_USERNAME=aygo
+      - MONGODB_PASSWORD=secret
+      - MONGODB_HOST=db
+      - MONGODB_PORT=27017
+      - MONGODB_DB=test
+    ports:
+      - 8088:6000
+  web1:
+    image: jhordy7700/taller-aygo-ms
+    container_name: web1
+    environment:
+      - MONGODB_USERNAME=aygo
+      - MONGODB_PASSWORD=secret
+      - MONGODB_HOST=db
+      - MONGODB_PORT=27017
+      - MONGODB_DB=test
+    ports:
+      - 8087:6000
+  db:
+    image: mongo:3.6
+    container_name: db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: aygo
+      MONGO_INITDB_ROOT_PASSWORD: secret
+    ports:
+      - 27017:27017
+    command: mongod
+
+volumes:
+  mongodb:
+  mongodb_config:

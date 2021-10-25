@@ -1,0 +1,93 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+
+@esteban7700
+esteban7700
+/
+liftit-frontend
+Public
+1
+0
+0
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+37
+Insights
+Settings
+liftit-frontend/.gitignore
+
+Esteban Salinas initial commit
+Latest commit 1be6e1e on Feb 4, 2019
+ History
+ 0 contributors
+We found potential security vulnerabilities in your dependencies.
+Only the owner of this repository can see this message.
+
+44 lines (37 sloc)  587 Bytes
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules
+
+# profiling files
+chrome-profiler-events.json
+speed-measure-plugin.json
+
+# IDEs and editors
+*.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+target/
