@@ -2,11 +2,12 @@ import {HttpClient} from '@angular/common/http'
 import {Observable} from 'rxjs';
 import {Injectable} from '@angular/core'
 import {Log, Logs} from '../../general/components/models';
+import {environment} from "../../../environments/environment";
 
 @Injectable({providedIn:'root'})
 export class LogService {
 
-  url = 'http://ec2-3-95-148-220.compute-1.amazonaws.com:7077/balancer/log'
+  url = environment.backendUrl
   httpOptions = {
     headers: {
       'Content-Type': 'application/json'

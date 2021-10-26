@@ -1,6 +1,15 @@
 version: '2'
 
 services:
+  front:
+    build:
+      context: ./taller-aygo-frontend
+      dockerfile: Dockerfile
+    container_name: front
+    environment:
+      - BACK_API=http://localhost:7077/balancer/log
+    ports:
+      - 8080:80
   balancer:
     build:
       context: ./taller-aygo-balancer-ms

@@ -1,6 +1,13 @@
 version: '2'
 
 services:
+  front:
+    image: jhordy7700/taller-aygo-frontend
+    container_name: front
+    environment:
+      - BACK_API=http://ec2-54-145-112-218.compute-1.amazonaws.com:7077/balancer/log
+    ports:
+      - 8080:80
   balancer:
     image: jhordy7700/taller-aygo-balancer-ms
     container_name: balancer
